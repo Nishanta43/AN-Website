@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AN International - Company title</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 40px;
+      background: #fffaf0;
+      border-bottom: 1px solid #ccc;
+      position: relative;
+    }
+    .header-left {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .logo-section {
+      display: flex;
+      align-items: center;
+      margin-left: 100px; /* Moves logo+text toward middle between left and center */
+      flex-wrap: nowrap;
+    }
+    .logo-section img {
+      height: 140px;
+    }
+    .logo-text {
+      margin-left: 15px;
+      width: auto;
+      flex-shrink: 0;
+    }
+    .logo-text h1 {
+      margin: 0;
+      font-size: 35px;
+      font-weight: bold;
+      color: #B8860B;
+      white-space: nowrap;
+      line-height: 1.2;
+    }
+    .logo-text p {
+      margin: 5px 0 0 0;
+      font-size: 18px;
+      color: #B8860B;
+    }
+    .header-center {
+      flex: 1;
+    }
+    .header-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      font-size: 14px;
+    }
+    .header-right p {
+      margin: 2px 0;
+    }
+    .contact-buttons {
+      margin-top: 5px;
+    }
+    .contact-buttons button {
+      margin-left: 10px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .client-login {
+      border: 1px solid #B8860B;
+      background: #B8860B;
+    }
+    .quote {
+      background: #B8860B;
+      color: black;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Navigation bar styles */
+    .nav-bar {
+      background-color: #333;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    .nav-bar a {
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      text-align: center;
+      font-size: 16px;
+    }
+    .nav-bar a:hover {
+      background-color: #575757;
+      border-radius: 5px;
+    }
+    
+    /* Slideshow container styles */
+    .slideshow-container {
+      max-width: 1200px;
+      position: relative;
+      margin: 30px auto;
+    }
+    
+    /* Hide images by default */
+    .slide {
+      display: none;
+      text-align: center;
+    }
+    
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: rgba(0,0,0,0.4);
+    }
+    
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    
+    /* The dots/bullets/indicators */
+    .dots-container {
+      text-align: center;
+      margin-top: -20px;
+    }
+    
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    
+    .active, .dot:hover {
+      background-color: #B8860B;
+    }
+    
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+    
+    /* Make the images responsive */
+    .slide img {
+      max-width: 100%;
+      height: auto;
+      max-height: 600px; /* Set maximum height for images */
+    }
+    
+    /* Footer styles */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      margin-top: 30px;
+    }
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #555;
+    }
+    .footer-nav a {
+      color: white;
+      padding: 0 20px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .contact-info {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    .social-links a {
+      margin: 0 15px;
+    }
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #1a1a1a;
+      color: gold;
+      font-size: 20px;
+      transition: all 0.3s ease;
+    }
+    .social-icon:hover {
+      transform: scale(1.1);
+    }
+    .bold {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-left">
+    <div class="logo-section">
+      <img src="images/Officiallogo.png" alt="AN International Logo">
+      <div class="logo-text">
+        <h1>AN International</h1>
+        <p>Vibe with data, thrive with impact.</p>
+      </div>
+    </div>
+  </div>
+  <div class="header-center"></div>
+  <div class="header-right">
+    <p>📞 +66 082-593-2084</p>
+    <p>✉️ <a href="mailto:contact@aninternational.com.np">contact@aninternational.com.np</a></p>
+    <div class="contact-buttons">
+      <button class="client-login">Client Login</button>
+      <button class="quote">Get A Quote</button>
+    </div>
+    <p style="font-size: 12px;">Available 24X7 / 365 days</p>
+  </div>
+</header>
+<!-- Navigation Bar -->
+<nav class="nav-bar">
+  <a href="#">Home</a>
+  <a href="#">Publication Services</a>
+  <a href="#">Data Services</a>
+  <a href="#">Online Learning</a>
+  <a href="#">Collaboration</a>
+  <a href="#">Publications</a>
+  <a href="#">Our Team</a>
+  <a href="#">Pricing</a>
+  <a href="#">About Us</a>
+</nav>
+
+<!-- Slideshow Container -->
+<div class="slideshow-container">
+  <div class="slide fade">
+    <img src="images/statisticalsupport.png" alt="Statistical Support">
+  </div>
+
+  <div class="slide fade">
+    <img src="images/publicaitonsupport.png" alt="Publication Support">
+  </div>
+
+  <div class="slide fade">
+    <img src="images/collaboration.png" alt="Collaboration">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- Dots/circles -->
+<div class="dots-container">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<!-- Footer Section -->
+<footer>
+  <div class="footer-nav">
+    <a href="#">News</a>
+    <a href="#">Careers</a>
+    <a href="#">Partners & Memberships</a>
+  </div>
+  <div class="contact-info">
+    <p class="bold">CONTACT US:</p>
+    <p>Monday‒Friday：4:00‒18:00<br>
+    Email：contact@aninternational.com.np<br>
+    Tel：+977-9856000245<br>
+    Head Office: Zero K.M -5, Pokhara, Nepal.</p>
+  </div>
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61575658254817&sk=about" target="_blank">
+      <div class="social-icon">
+        <i class="fab fa-facebook-f"></i>
+        f
+      </div>
+    </a>
+    <a href="https://www.youtube.com/@ANdiggi" target="_blank">
+      <div class="social-icon">
+        <i class="fab fa-youtube"></i>
+        ▶
+      </div>
+    </a>
+    <a href="https://www.linkedin.com/company/anint" target="_blank">
+      <div class="social-icon">
+        <i class="fab fa-linkedin-in"></i>
+        in
+      </div>
+    </a>
+  </div>
+</footer>
+
+<!-- Add Font Awesome for better social icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- JavaScript for Slideshow -->
+<script>
+  let slideIndex = 1;
+  let slideTimer;
+  
+  // Show slides when page loads
+  window.onload = function() {
+    showSlides(slideIndex);
+    // Start automatic slideshow
+    startSlideTimer();
+  };
+  
+  // Next/previous controls
+  function plusSlides(n) {
+    // Reset timer when manually changing slides
+    resetSlideTimer();
+    showSlides(slideIndex += n);
+  }
+  
+  // Thumbnail image controls
+  function currentSlide(n) {
+    // Reset timer when manually changing slides
+    resetSlideTimer();
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dot");
+    
+    // Loop back to first slide if at end
+    if (n > slides.length) {slideIndex = 1}
+    
+    // Go to last slide if moving before first slide
+    if (n < 1) {slideIndex = slides.length}
+    
+    // Hide all slides
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    
+    // Remove active class from all dots
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    // Show current slide and make its dot active
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+  
+  // Start automatic slideshow with 4 second interval
+  function startSlideTimer() {
+    slideTimer = setInterval(function() {
+      slideIndex++;
+      showSlides(slideIndex);
+    }, 4000); // 4 seconds
+  }
+  
+  // Reset the timer
+  function resetSlideTimer() {
+    clearInterval(slideTimer);
+    startSlideTimer();
+  }
+</script>
+</body>
+</html>

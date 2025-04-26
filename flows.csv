@@ -1,0 +1,15 @@
+﻿Flow ID,Flow name,Category,Flow type,Reference unit,CAS
+F001,Electricity,Energy/Electricity,PRODUCT,kWh,
+F002,Ethanol,Materials/Chemicals,PRODUCT,L,64-17-5
+F003,Water,Resources/Water,PRODUCT,L,7732-18-3
+F004,Paracetamol API,Materials/API,PRODUCT,kg,103-90-2
+F005,Microcrystalline cellulose,Materials/Excipients,PRODUCT,kg,9004-34-6
+F006,Starch,Materials/Excipients,PRODUCT,kg,9005-25-8
+F007,Magnesium stearate,Materials/Excipients,PRODUCT,kg,557-04-0
+F008,Aluminum foil,Materials/Packaging,PRODUCT,kg,7429-90-5
+F009,PVC blister,Materials/Packaging,PRODUCT,kg,9002-86-2
+F010,Cardboard box,Materials/Packaging,PRODUCT,kg,
+F011,CO2 emissions,Emissions/Air,ELEMENTARY,kg,124-38-9
+F012,Waste water,Waste,WASTE,L,
+F013,Process waste,Waste,WASTE,kg,
+F014,Packaging waste,Waste,WASTE,kg,
