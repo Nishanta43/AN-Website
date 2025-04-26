@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AN International - Company title</title>
+  <title>Literature Review - AN International</title>
   <style>
     body {
       font-family: 'Times New Roman', Times, serif;
@@ -75,7 +75,7 @@
       cursor: pointer;
       font-size: 14px;
     }
-    .user-login {
+    .client-login {
       border: 1px solid #B8860B;
       background: #B8860B;
     }
@@ -141,84 +141,20 @@
       display: block;
     }
     
-    /* Slideshow container styles */
-    .slideshow-container {
+    /* Content area styles */
+    .main-content {
       max-width: 1200px;
-      position: relative;
       margin: 30px auto;
+      padding: 20px;
+      min-height: 500px; /* Ensures there's enough space for your content */
     }
     
-    /* Hide images by default */
-    .slide {
-      display: none;
+    /* Page title styles */
+    .page-title {
+      color: #B8860B;
       text-align: center;
-    }
-    
-    /* Next & previous buttons */
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      margin-top: -22px;
-      padding: 16px;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-      background-color: rgba(0,0,0,0.4);
-    }
-    
-    /* Position the "next button" to the right */
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-    
-    /* On hover, add a black background color with a little bit see-through */
-    .prev:hover, .next:hover {
-      background-color: rgba(0,0,0,0.8);
-    }
-    
-    /* The dots/bullets/indicators */
-    .dots-container {
-      text-align: center;
-      margin-top: -20px;
-    }
-    
-    .dot {
-      cursor: pointer;
-      height: 15px;
-      width: 15px;
-      margin: 0 2px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.6s ease;
-    }
-    
-    .active, .dot:hover {
-      background-color: #B8860B;
-    }
-    
-    /* Fading animation */
-    .fade {
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-    
-    @keyframes fade {
-      from {opacity: .4}
-      to {opacity: 1}
-    }
-    
-    /* Make the images responsive */
-    .slide img {
-      max-width: 100%;
-      height: auto;
-      max-height: 600px; /* Set maximum height for images */
+      margin-bottom: 30px;
+      font-size: 32px;
     }
     
     /* Footer styles */
@@ -290,11 +226,13 @@
     <p>📞 +66 082-593-2084</p>
     <p>✉️ <a href="mailto:contact@aninternational.com.np">contact@aninternational.com.np</a></p>
     <div class="contact-buttons">
-      <a href="https://accounts.zoho.com/signin?servicename=VirtualOffice&signupurl=https%3A%2F%2Fwww.zoho.com%2Fmail%2Fzohomail-pricing.html&serviceurl=https%3A%2F%2Fmail.zoho.com%2Fzm%2F#mail/folder/inbox" target="_blank"><button class="user-login">Login</button></a>
+      <a href="https://accounts.zoho.com/signin?servicename=VirtualOffice&signupurl=https%3A%2F%2Fwww.zoho.com%2Fmail%2Fzohomail-pricing.html&serviceurl=https%3A%2F%2Fmail.zoho.com%2Fzm%2F#mail/folder/inbox" target="_blank"><button class="client-login">Client Login</button></a>
+      <button class="quote">Get A Quote</button>
     </div>
-    <p style="font-size: 12px;"></p>
+    <p style="font-size: 12px;">Available 24X7 / 365 days</p>
   </div>
 </header>
+
 <!-- Navigation Bar with Dropdowns -->
 <nav class="nav-bar">
   <div class="nav-item">
@@ -306,6 +244,7 @@
     <div class="dropdown-menu">
       <a href="literaturereview.html">Literature Review</a>
       <a href="researchdesign.html">Research Design</a>
+      <a href="discussion.html">Discussion</a>
       <a href="peerreview.html">Peer Review</a>
     </div>
   </div>
@@ -373,30 +312,12 @@
   </div>
 </nav>
 
-<!-- Slideshow Container -->
-<div class="slideshow-container">
-  <div class="slide fade">
-    <img src="images/statisticalsupport.png" alt="Statistical Support">
-  </div>
-
-  <div class="slide fade">
-    <img src="images/publicaitonsupport.png" alt="Publication Support">
-  </div>
-
-  <div class="slide fade">
-    <img src="images/collaboration.png" alt="Collaboration">
-  </div>
-
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-
-<!-- Dots/circles -->
-<div class="dots-container">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
+<!-- Main Content Area -->
+<div class="main-content">
+  <h1 class="page-title">Literature Review</h1>
+  
+  <!-- Add your content here -->
+  <p>This is where you'll add your content for Literature Review. You can replace this text with your own content.</p>
 </div>
 
 <!-- Footer Section -->
@@ -437,72 +358,5 @@
 
 <!-- Add Font Awesome for better social icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-<!-- JavaScript for Slideshow -->
-<script>
-  let slideIndex = 1;
-  let slideTimer;
-  
-  // Show slides when page loads
-  window.onload = function() {
-    showSlides(slideIndex);
-    // Start automatic slideshow
-    startSlideTimer();
-  };
-  
-  // Next/previous controls
-  function plusSlides(n) {
-    // Reset timer when manually changing slides
-    resetSlideTimer();
-    showSlides(slideIndex += n);
-  }
-  
-  // Thumbnail image controls
-  function currentSlide(n) {
-    // Reset timer when manually changing slides
-    resetSlideTimer();
-    showSlides(slideIndex = n);
-  }
-  
-  function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("slide");
-    let dots = document.getElementsByClassName("dot");
-    
-    // Loop back to first slide if at end
-    if (n > slides.length) {slideIndex = 1}
-    
-    // Go to last slide if moving before first slide
-    if (n < 1) {slideIndex = slides.length}
-    
-    // Hide all slides
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    
-    // Remove active class from all dots
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    
-    // Show current slide and make its dot active
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-  }
-  
-  // Start automatic slideshow with 4 second interval
-  function startSlideTimer() {
-    slideTimer = setInterval(function() {
-      slideIndex++;
-      showSlides(slideIndex);
-    }, 4000); // 4 seconds
-  }
-  
-  // Reset the timer
-  function resetSlideTimer() {
-    clearInterval(slideTimer);
-    startSlideTimer();
-  }
-</script>
 </body>
 </html>
