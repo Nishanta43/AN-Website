@@ -6,7 +6,7 @@
   <title>AN International - Company title</title>
   <style>
     body {
-      font-family: 'Times New Roman', Georgia, Helvetica, sans-serif;
+      font-family: ''Georgia', serif;
       margin: 0;
       padding: 0;background-color: #FFFFFF; /* white */
       color: #2E8B57;            /* green text */
@@ -19,7 +19,7 @@
       padding: 10px 20px;
       background: #fffaf0;
       border-bottom: 1px solid #f1e97f;
-      position: relative;
+      flex-wrap: wrap;
     }
     .header-left {
       flex: 1;
@@ -247,28 +247,53 @@
       display: flex;
       justify-content: space-between;
       gap: 20px;
-      width: 100%;
-      max-width: 1200px;
+      width: 80%;
       margin: auto;
-      flex-wrap: wrap; /* Optional: allow stacking on small screens */
+      flex-wrap: nowrap; /* Ensure no wrapping */
     }
     .slideshow-container {
-      flex: 1 1 45%;
-      max-width: 100%;
-      max-width: 100%;
+      flex: 1 1 60%; /* Slide takes 60% of the screen */
+      max-width: 60%; /* Ensures it doesn't stretch beyond 60% */
       position: relative;
-      margin: 30px auto;
+      margin-left: 0; /* Move slide to the left */
+      margin-right: auto; /* Ensures the slide container is aligned to the left */
+    }
+    .still-image {
+      flex: 1 1 40%; /* Still image takes 40% of the screen */
+      max-width: 40%; /* Ensures it doesn't stretch beyond 40% */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin-left: auto;
+      margin-right: 0;
+    }
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the image fills the container */
+      display: block;
+      margin: auto;
+    }
+    .still-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures still image fits the container */
+      display: block;
+      margin: auto;
     }
     /* Fading animation */
     .fade {
       animation-name: fade;
       animation-duration: 1.5s;
     }
+
     /* Hide images by default */
     .slide {
       display: none;
       text-align: center;
     }
+
     /* Next & previous buttons */
     .prev, .next {
       cursor: pointer;
@@ -285,45 +310,19 @@
       user-select: none;
       background-color: rgba(0,0,0,0.4);
     }
+
     /* Position the "next button" to the right */
     .next {
       right: 0;
       border-radius: 3px 0 0 3px;
     }
+
     /* On hover, add a black background color with a little bit see-through */
     .prev:hover, .next:hover {
       background-color: rgba(0,0,0,0.8);
     }
-    /* The dots/bullets/indicators */
-    .dots-container {
-      text-align: center;
-      margin-top: -20px;
-    }
-    .dot {
-      cursor: pointer;
-      height: 15px;
-      width: 15px;
-      margin: 0 2px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.6s ease;
-    }
-    .active, .dot:hover {
-      background-color: #B8860B;
-    }
-    @keyframes fade {
-      from {opacity: .4}
-      to {opacity: 1}
-    }
-    /* Make the images responsive */
-    .slide img {
-      max-width: 50%;
-      height: 50%;
-      max-height: 70%; /* Set maximum height for images */
-    }
-    /* Footer styles */
-    footer {
+        /* Footer styles */
+        footer {
       background-color: #9C640C;
       color: white;
       padding: 1px 0;
@@ -347,42 +346,14 @@
       font-size: 20px;
       line-height: 1.2;
     }
-    .slide2 img {
-      max-width: 50%;
-      height: auto;
-    } 
-    /* Hide by default */
-    .slide2 {
-      display: none;
-      text-align: center;
-    }
-    .fade2 {
-      animation-name: fade2;
-      animation-duration: 1.5s;
-}
 
-    @keyframes fade2 {
+    @keyframes fade {
       from {opacity: .4}
       to {opacity: 1}
     }
-
-    .dot2 {
-      cursor: pointer;
-      height: 15px;
-      width: 15px;
-      margin: 0 2px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.6s ease;
-    }
-
-.active2, .dot2:hover {
-  background-color: #B8860B;
-}
-/* Mobile Responsiveness */
-@media screen and (max-width: 768px) {
-    header {
+    /* Mobile Responsiveness */
+    @media screen and (max-width: 768px) {
+        header {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -404,11 +375,11 @@
     }
 
     .slide img {
-        max-width: 100%;
+        max-width: 50%;
         height: auto;
     }
     .slideshow-container {
-    max-width: 100%;
+    max-width: 80%;
     flex-basis: 100%;
     }
     .nav-toggle {
@@ -543,48 +514,24 @@
   <!-- First Slideshow -->
   <div class="slideshow-container">
     <div class="slide fade">
-      <img src="images/Background.jpg" alt="Slideshow Image 1">
+      <img src="images/publicaitonsupport.png" alt="Slideshow Image 1">
     </div>
     <div class="slide fade">
-      <img src="images/Background.jpg" alt="Slideshow Image 2">
+      <img src="images/collaboration.png" alt="Slideshow Image 2">
     </div>
     <div class="slide fade">
-      <img src="images/Background.jpg" alt="Slideshow Image 3">
+      <img src="images/statisticalsupport.png" alt="Slideshow Image 3">
     </div>
 
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
-
-<div class="dots-container">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-</div>
-
 <!-- Second Slideshow -->
-<div class="slideshow-container">
-  <div class="slide2 fade2">
-    <img src="images/statisticalsupport.png" alt="Slideshow Image 4">
+  <!-- Still Image -->
+  <div class="still-image">
+    <img src="images/onlineccourse.jpg" alt="Still Image">
   </div>
-  <div class="slide2 fade2">
-    <img src="images/publicaitonsupport.png" alt="Slideshow Image 5">
-  </div>
-  <div class="slide2 fade2">
-    <img src="images/collaboration.png" alt="Slideshow Image 6">
-  </div>
-
-  <a class="prev" onclick="plusSlides2(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides2(1)">&#10095;</a>
 </div>
-</div>
-
-<div class="dots-container">
-  <span class="dot2" onclick="currentSlide2(1)"></span>
-  <span class="dot2" onclick="currentSlide2(2)"></span>
-  <span class="dot2" onclick="currentSlide2(3)"></span>
-</div>
-
 <!-- Footer Section -->
 <footer>
   <div class="footer-nav">
