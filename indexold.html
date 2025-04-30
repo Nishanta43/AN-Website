@@ -1,223 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSSLibraries -->
-    <link rel="stylesheet" href="library/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="library/font-awesome/CSSLibraries/font-awesome.min"
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-<!-- title -->
-    <title>A and N International</title>
-    <link rel="icon" type="image/png" href="images/titlelogo.png">
+  <meta charset="UTF-8">
+  <title>AN International</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 15px 20px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #B8860B;
+    }
+
+    nav {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    nav a, .dropdown .dropbtn {
+      float: left;
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    nav a:hover, .dropdown:hover .dropbtn {
+      background-color: #B8860B;
+    }
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .slideshow-container {
+      position: relative;
+      margin: auto;
+      max-width: 100%;
+    }
+
+    .slide, .slide2 {
+      display: none;
+      text-align: center;
+    }
+
+    .slide img, .slide2 img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      user-select: none;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .dots-container {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .dot, .dot2 {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: #B8860B;
+    }
+
+    .active2, .dot2:hover {
+      background-color: #B8860B;
+    }
+
+    .fade, .fade2 {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 </head>
+<body>
 
-    <!-- Navigation -->
-     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#home">
-                    <img src="images/titlelogo.png" alt="Logo" width="55" height="60" class="d-inline-block align-text-top">
-                    <div class="brand-text">
-                        AN International
-                        <span class="slogan">Vibe with data, thrive with impact.</span>
-                    </div>
-                </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-0 mb-lg-9">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#research">Research Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#stat">Statistical Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#grant">Grant Development</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#collaboration">Collaboration</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#publication">Publications</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#contact">Contact</a>
-                </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-     </header>
+<header>
+  <h1>AN International</h1>
+</header>
 
-     <!-- home -->
-    <section id="home">
-        <div id="particles-js"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 justify-content-center">
-                    <h1 id="name">"Complete Research Solution Provider"</h1>
-                    <p id="tagline">For Qualitative and Quantitative Research</p>
-                    <a href="#home" id="slogan"><i class="fa fa-angle-down"></i> Vibe with data, thrive with impact.</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<nav>
+  <a href="#">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">About</button>
+    <div class="dropdown-content">
+      <a href="#">Our Mission</a>
+      <a href="#">Team</a>
+      <a href="#">History</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Projects</button>
+    <div class="dropdown-content">
+      <a href="#">Ongoing</a>
+      <a href="#">Completed</a>
+      <a href="#">Publications</a>
+    </div>
+  </div>
+  <a href="#">Contact</a>
+</nav>
 
-    <!-- service -->
-    <section id="research">
-        <div class="container">
-            <div class="row">
-                <h2 class="title text-center w-100">Our Products and Services</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-4 py-1">
-                    <div class="card" style="min-width: 18rem;">
-                        <img src="images/project.jpg" class="card-img-top" alt="Project">
-                        <div class="card-body">
-                          <h5 class="Our Projects">Project Management</h5>
-                          <p class="card-text">Socio-Economic Impacts, Demographic Trends, Climate Change and Environment</p>
-                          <a href="#" class="btn btn-primary">Our Projects</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 py-1">
-                    <div class="card" style="min-width: 18rem;">
-                        <img src="images/research.jpg" class="card-img-top" alt="Research">
-                        <div class="card-body">
-                          <h5 class="Research">Research Collaboration</h5>
-                          <p class="card-text">Quantitative and Qualitative Research, Grants</p>
-                          <a href="#" class="btn btn-primary">Past Research</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 py-1">
-                    <div class="card" style="min-width: 18rem;">
-                        <img src="images/onlineccourse.jpg" class="card-img-top" alt="Course">
-                        <div class="card-body">
-                          <h5 class="Course">Online Course</h5>
-                          <p class="card-text">Satistical Analysis, Research Methods, Inductive and Deductive Theory</p>
-                          <a href="#" class="btn btn-primary">See Available Course</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- First Slideshow -->
+<div class="slideshow-container">
+  <div class="slide fade">
+    <img src="images/slideshow1.png" alt="Slideshow Image 1">
+  </div>
+  <div class="slide fade">
+    <img src="images/slideshow2.png" alt="Slideshow Image 2">
+  </div>
+  <div class="slide fade">
+    <img src="images/slideshow3.png" alt="Slideshow Image 3">
+  </div>
 
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
 
+<div class="dots-container">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
 
-    <!-- project -->
-    <section id="stat">
-        <div class="container">
-            <div class="row">
-                <h2 class="title text-center w-100">Past Projects</h2>
-            </div>
-        </div>
-    </section>
-        
-       
-    <!-- publication -->
-    <section id="grant">
-        <div class="container">
-            <div class="row">
-                <h2 class="title text-center w-100">Our Publications</h2>
-            </div>
-        </div>
-    </section>
-    
-    <!-- partnership -->
-     <section id="collaboration">
-        <div class="container">
-            <div class="row">
-                <h2 class="title text-center w-100">Partneship Arena</h2>
-            </div>
-        </div>
-    </section>
+<!-- Second Slideshow -->
+<div class="slideshow-container">
+  <div class="slide2 fade2">
+    <img src="images/slideshow4.png" alt="Slideshow Image 4">
+  </div>
+  <div class="slide2 fade2">
+    <img src="images/slideshow5.png" alt="Slideshow Image 5">
+  </div>
+  <div class="slide2 fade2">
+    <img src="images/slideshow6.png" alt="Slideshow Image 6">
+  </div>
 
-    <!-- partnership -->
-    <section id="publication">
-        <div class="container">
-            <div class="row">
-                <h2 class="title text-center w-100">Partneship Arena</h2>
-            </div>
-        </div>
-    </section>
+  <a class="prev" onclick="plusSlides2(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides2(1)">&#10095;</a>
+</div>
 
-    <!-- contact -->
-     <section id="contact">
-        <div class="container">
-            <div class="row">
-                <h2 class="title text-center w-100">Contact Us</h2>
-            </div>
-            <form action"https://formspree.io/mailme.contact@aninter.com.np" method="POST"></form>>
-                <div class="row py-4">
-                    <div class="form group col-md-6">
-                        <label for="Email" class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control" placeholder="Enter your email">
-                    </div>
-                    <div class="form group col-md-6">
-                        <label for="Full Name" class="form-label">Full Name</label>
-                        <input type="text" name="name" class="form-control" placeholder="Your Full Name">
-                    </div>
-                    <div class="form group col-md-12">
-                        <label for="Message" class="form-label">Leave your message</label>
-                        <input type="text" class="form-control" name="Message Title" placeholder="Title of your message">
-                        <textarea class="form-control" name="Type your message" rows="3" placeholder="Full message"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-block submit">Submit</button>
-                </div>
-            </form>
-        </div>
-    </section>
+<div class="dots-container">
+  <span class="dot2" onclick="currentSlide2(1)"></span>
+  <span class="dot2" onclick="currentSlide2(2)"></span>
+  <span class="dot2" onclick="currentSlide2(3)"></span>
+</div>
 
-    <!-- footer -->
-    <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      </head>
-      
-      <footer id="footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-5">
-              <ul>
-                <li><strong>Email:</strong> contact@aninternational.com.np</li>
-              </ul>
-            </div>
-            <div class="col-md-2">
-              <a href="#home" class="back-to-top"><i class="fa fa-arrow-circle-up"></i></a>
-            </div>
-            <div class="col-md-3">
-              <ul id="social">
-                <li><a href="https://www.facebook.com/profile.php?id=61575658254817&sk=about" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
-                <li><a href="https://www.youtube.com/@ANdiggi" target="_blank"><i class="fa fa-youtube-square"></i></a></li>
-                <li><a href="https://www.linkedin.com/company/anint" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
-      
+<footer>
+  <p>&copy; 2025 AN International. All rights reserved.</p>
+</footer>
 
-    
+<script>
+  // First Slideshow
+  let slideIndex = 1;
+  let slideTimer;
 
-        <!-- JS library -->
-        <script type="text/javascript" src="js/jquery-3.1.1.min.js"</script>
-        <script type="text/javascript" src="js/bootstrap.min.js"</script>
-        <script type="text/javascript" src="js/smooth-scroll.js"</script>
-        <script type="text/javascript" src="js/wow.js"</script>
-        <script type="text/javascript" src="js/particles.js"</script>
-        <script type="text/javascript" src="js/app.js"</script>
-        <script src="script.js"></script>
+  function showSlides(n) {
+    let i;
+    const slides = document.getElementsByClassName("slide");
+    const dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+
+  function plusSlides(n) {
+    resetSlideTimer();
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    resetSlideTimer();
+    showSlides(slideIndex = n);
+  }
+
+  function startSlideTimer() {
+    slideTimer = setInterval(() => {
+      slideIndex++;
+      showSlides(slideIndex);
+    }, 4000);
+  }
+
+  function resetSlideTimer() {
+    clearInterval(slideTimer);
+    startSlideTimer();
+  }
+
+  // Second Slideshow
+  let slideIndex2 = 1;
+  let slideTimer2;
+
+  function showSlides2(n) {
+    let i;
+    const slides = document.getElementsByClassName("slide2");
+    const dots = document.getElementsByClassName("dot2");
+    if (n > slides.length) { slideIndex2 = 1 }
+    if (n < 1) { slideIndex2 = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active2", "");
+    }
+    slides[slideIndex2-1].style.display = "block";
+    dots[slideIndex2-1].className += " active2";
+  }
+
+  function plusSlides2(n) {
+    resetSlideTimer2();
+    showSlides2(slideIndex2 += n);
+  }
+
+  function currentSlide2(n) {
+    resetSlideTimer2();
+    showSlides2(slideIndex2 = n);
+  }
+
+  function startSlideTimer2() {
+    slideTimer2 = setInterval(() => {
+      slideIndex2++;
+      showSlides2(slideIndex2);
+    }, 4000);
+  }
+
+  function resetSlideTimer2() {
+    clearInterval(slideTimer2);
+    startSlideTimer2();
+  }
+
+  window.addEventListener('load', () => {
+    showSlides(slideIndex);
+    startSlideTimer();
+    showSlides2(slideIndex2);
+    startSlideTimer2();
+  });
+</script>
+
 </body>
 </html>
