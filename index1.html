@@ -6,9 +6,10 @@
   <title>AN International - Company title</title>
   <style>
     body {
-      font-family: 'Times New Roman', Times, serif;
+      font-family: 'Times New Roman', Arial, Helvetica, sans-serif;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
     header {
       display: flex;
@@ -18,27 +19,20 @@
       background: #fffaf0;
       border-bottom: 1px solid #ccc;
       position: relative;
-      flex-wrap: wrap;
     }
     .header-left {
       flex: 1;
       display: flex;
       align-items: center;
     }
-    .logo {
-      height: 120px;
-      max-width: 100%;
-      transition: height 0.3s ease;
-    }
     .logo-section {
       display: flex;
       align-items: center;
-      margin-left: 5%;
+      margin-left: 100px; /* Moves logo+text toward middle between left and center */
       flex-wrap: nowrap;
     }
     .logo-section img {
-      height: 120px;
-      max-width: 100%;
+      height: 80px;
     }
     .logo-text {
       margin-left: 15px;
@@ -66,26 +60,25 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      font-size: 20px;
+      font-size: 14px;
     }
     .header-right p {
       margin: 2px 0;
     }
-    .contact-button {
-      padding: 6px 15px;
-      border: 1px solid #f7f7f7;
-      border-radius: 5px;
-      background-color: #B8860B;
-      color: #fcf9f9;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 18px;
-      cursor: pointer;
-      transition: background-color 0.3s, color 0.3s;
+    .contact-buttons {
+      margin-top: 5px;
     }
-    .contact-button:hover {
-      background-color: #0c0c0c;
-      color: #B8860B;
+    .contact-buttons button {
+      margin-left: 10px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .login-button {
+      padding: 8px 16px;
+      background-color: #B8860B;
       color: white;
       border: none;
       border-radius: 20px;
@@ -96,6 +89,7 @@
     }
     .login-button:hover {
       background-color: #9C640C;
+      transform: scale(1.05);
     }
     .quote {
       background: #B8860B;
@@ -114,7 +108,6 @@
       padding: 10px 0;
       position: relative;
       z-index: 100;
-      flex-wrap: wrap;
     }
     .nav-item {
       position: relative;
@@ -122,7 +115,7 @@
     }
     .nav-bar a.nav-link {
       color: white;
-      padding: 10px 15px;
+      padding: 5px 12px;
       text-decoration: none;
       text-align: center;
       font-size: 18px;
@@ -136,9 +129,9 @@
     .dropdown-menu {
       display: none;
       position: absolute;
-      background-color: #D4AC0D;
+      background-color: #fafafa;
       min-width: 200px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 16px;
       z-index: 101;
       border-radius: 5px;
       margin-top: 5px;
@@ -159,22 +152,20 @@
     .nav-item:hover .dropdown-menu {
       display: block;
     }
-    .hero {
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
-    }
+    
+    /* Slideshow container styles */
     .slideshow-container {
-      width: 70%;
-      height: 70%;
+      max-width: 1200px;
       position: relative;
+      margin: 30px auto;
     }
-    .slide img {
-      width: 70%;
-      height: 70%;
-      object-fit: cover;
+    
+    /* Hide images by default */
+    .slide {
+      display: none;
+      text-align: center;
     }
+    
     /* Next & previous buttons */
     .prev, .next {
       cursor: pointer;
@@ -191,6 +182,7 @@
       user-select: none;
       background-color: rgba(0,0,0,0.4);
     }
+    
     /* Position the "next button" to the right */
     .next {
       right: 0;
@@ -205,7 +197,7 @@
     /* The dots/bullets/indicators */
     .dots-container {
       text-align: center;
-      margin-top: 20px;
+      margin-top: -20px;
     }
     
     .dot {
@@ -236,9 +228,9 @@
     
     /* Make the images responsive */
     .slide img {
-      max-width: 1000%;
+      max-width: 100%;
       height: auto;
-      max-height: 800px; /* Set maximum height for images */
+      max-height: 300px; /* Set maximum height for images */
     }
     
     /* Footer styles */
@@ -253,11 +245,10 @@
       justify-content: center;
       padding: 10px 0;
       border-bottom: 1px solid #555;
-      flex-wrap: wrap;
     }
     .footer-nav a {
       color: white;
-      padding: 10px 18px;
+      padding: 0 18px;
       text-decoration: none;
       font-size: 20px;
     }
@@ -271,7 +262,6 @@
       display: flex;
       justify-content: center;
       padding: 3px 0;
-      flex-wrap: wrap;
     }
     .social-links a {
       margin: 0 10px;
@@ -294,105 +284,27 @@
     .bold {
       font-weight: bold;
     }
-    
-    /* Mobile Responsive Styles */
-    @media screen and (max-width: 768px) {
-      header {
-        flex-direction: column;
-        padding: 10px;
-      }
-      
-      .header-left, .header-right, .header-center {
-        width: 100%;
-        flex: none;
-        align-items: center;
-        text-align: center;
-        margin: 5px 0;
-      }
-      
-      .header-right {
-        align-items: center;
-      }
-      
-      .logo-section {
-        margin-left: 0;
-        justify-content: center;
-      }
-      
-      .logo-text h1 {
-        font-size: 30px;
-      }
-      
-      .logo-section img {
-        height: 60px;
-      }
-      
-      .nav-bar {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .nav-item {
-        width: 100%;
-        margin: 2px 0;
-        text-align: center;
-      }
-      
-      .nav-bar a.nav-link {
-        padding: 12px 20px;
-        font-size: 16px;
-      }
-      
-      .dropdown-menu {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-        margin-top: 0;
-      }
-      
-      .footer-nav {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .footer-nav a {
-        padding: 8px 0;
-      }
-      
-      .social-links {
-        margin: 10px 0;
-      }
-    }
-    
-    /* Small Mobile Screens */
-    @media screen and (max-width: 480px) {
-      .logo-text h1 {
-        font-size: 24px;
-      }
-      
-      .logo-text p {
-        font-size: 12px;
-      }
-      
-      .logo-section img {
-        height: 50px;
-      }
-      
-      .dropdown-menu a {
-        padding: 10px 15px;
-        font-size: 14px;
-      }
-      
-      .prev, .next {
-        padding: 8px;
-        font-size: 14px;
-      }
-      
-      .dot {
-        height: 10px;
-        width: 10px;
-      }
-    }
+      /* Mobile Responsiveness */
+      @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                height: 40px; /* Smaller logo on mobile */
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .header-left, .header-center, .header-right {
+                width: 100%;
+                justify-content: center;
+            }
+        }
   </style>
 </head>
 <body>
@@ -409,7 +321,7 @@
   <div class="header-center"></div>
   <div class="header-right">
     <p>📞 +66 082-593-2084</p>
-    <p>✉️ <a href="mailto:contact@aninternational.com.np" class="contact-button">contact@aninternational.com.np</a></p>
+    <p>✉️ <a href="mailto:contact@aninternational.com.np">contact@aninternational.com.np</a></p>
     <div class="social-links">
       <a href="https://www.facebook.com/profile.php?id=61575658254817&sk=about" target="_blank">
         <div class="social-icon">
@@ -426,10 +338,10 @@
           <i class="fab fa-linkedin-in"></i>
         </div>
       </a>
-      <a href="https://accounts.zoho.com/signin?servicename=VirtualOffice&signupurl=https%3A%2F%2Fwww.zoho.com%2Fmail%2Fzohomail-pricing.html&serviceurl=https%3A%2F%2Fmail.zoho.com%2Fzm%2F#mail/folder/inbox" 
-   target="_blank" 
-   class="login-button">User Login</a>
-  </div>
+    </div>
+    <a href="https://accounts.zoho.com/signin?servicename=VirtualOffice&signupurl=https%3A%2F%2Fwww.zoho.com%2Fmail%2Fzohomail-pricing.html&serviceurl=https%3A%2F%2Fmail.zoho.com%2Fzm%2F#mail/folder/inbox" 
+      target="_blank" 
+      class="login-button">User Login</a>
   </div>
 </header>
 
@@ -492,28 +404,31 @@
   </div>
 </nav>
 
-<!-- Hero Section Start -->
-<div class="hero">
-  <!-- Slideshow Container -->
-  <div class="slideshow-container">
-    <div class="slide fade">
-      <img src="images/statisticalsupport.png" alt="Statistical Support">
-    </div>
-
-    <div class="slide fade">
-      <img src="images/publicaitonsupport.png" alt="Publication Support">
-    </div>
-
-    <div class="slide fade">
-      <img src="images/collaboration.png" alt="Collaboration">
-    </div>
-
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+<!-- Slideshow Container -->
+<div class="slideshow-container">
+  <div class="slide fade">
+    <img src="images/statisticalsupport.png" alt="Statistical Support">
   </div>
+
+  <div class="slide fade">
+    <img src="images/publicaitonsupport.png" alt="Publication Support">
+  </div>
+
+  <div class="slide fade">
+    <img src="images/collaboration.png" alt="Collaboration">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
-<!-- Hero Section End -->
+
+<!-- Dots/circles -->
+<div class="dots-container">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
 
 <!-- Footer Section -->
 <footer>
