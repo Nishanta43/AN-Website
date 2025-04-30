@@ -6,9 +6,10 @@
   <title>AN International - Company title</title>
   <style>
     body {
-      font-family: 'Times New Roman', Arial, Helvetica, sans-serif;
+      font-family: 'Times New Roman', Georgia, Helvetica, sans-serif;
       margin: 0;
-      padding: 0;
+      padding: 0;background-color: #FFFFFF; /* white */
+      color: #2E8B57;            /* green text */
       box-sizing: border-box;
     }
     header {
@@ -17,7 +18,7 @@
       justify-content: space-between;
       padding: 10px 20px;
       background: #fffaf0;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #f1e97f;
       position: relative;
     }
     .header-left {
@@ -25,10 +26,18 @@
       display: flex;
       align-items: center;
     }
+    .header-right p,
+      .header-right p a {
+        font-size: 18px; /*phone and email size*/
+        color: #7E5109; /*phone and email color*/
+        padding: 10px 5px;
+        background: #f7f2e9;
+        transform: scale(1.05);
+    }
     .logo-section {
       display: flex;
       align-items: center;
-      margin-left: 100px; /* Moves logo+text toward middle between left and center */
+      margin-left: 25px; /* Moves logo+text toward middle between left and center */
       flex-wrap: nowrap;
     }
     .logo-section img {
@@ -46,11 +55,15 @@
       color: #7E5109;
       white-space: nowrap;
       line-height: 0.9;
+      font-family: 'Georgia', serif;
+      font-style: regular;
     }
     .logo-text p {
       margin: 0.1px 0 0 0;
-      font-size: 15px;
-      color: #7E5109;
+      font-size: 20px;
+      color: #054b03;
+      font-family: 'Georgia', serif;
+      font-style: italic;
     }
     .header-center {
       flex: 1;
@@ -61,34 +74,78 @@
       flex-direction: column;
       align-items: flex-end;
       font-size: 14px;
+      font-family: 'Georgia', serif;
     }
     .header-right p {
       margin: 2px 0;
     }
-    .contact-buttons {
-      margin-top: 5px;
+    .search-box {
+      display: flex;
+      align-items: center;
+      border: 1px solid #FFD700;
+      border-radius: 20px;
+      padding: 5px 10px;
+      background-color: white;
+      margin-left: 20px;
+      font-family: 'Georgia', serif;
     }
-    .contact-buttons button {
-      margin-left: 10px;
-      padding: 8px 15px;
+    .search-box input {
       border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      outline: none;
+      padding: 5px;
       font-size: 14px;
+      background: transparent;
+      font-family: 'Georgia', serif;
+    }
+    .search-box button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: #333;
+      font-size: 16px;
+      font-family: 'Georgia', serif;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      padding: 1px 0;
+    } 
+    .social-links a {
+      margin: 0 5px;
+    }
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #054b03;
+      color: gold;
+      font-size: 20px;
+      transition: all 0.3s ease;
+    }
+    .social-icon:hover {
+      transform: scale(1.1);
+    }
+    .bold {
+      font-weight: bold;
     }
     .login-button {
       padding: 8px 16px;
-      background-color: #B8860B;
-      color: white;
+      background-color: #054b03;
+      color: gold;
       border: none;
       border-radius: 20px;
       margin-left: 10px;
       font-size: 20px;
+      font-weight: semi-bold;
+      text-align: center;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      font-family: 'Georgia', serif;
     }
     .login-button:hover {
-      background-color: #9C640C;
       transform: scale(1.05);
     }
     .quote {
@@ -101,41 +158,70 @@
     }
     /* Navigation bar styles */
     .nav-bar {
-      background-color: #9C640C;
-      overflow: visible;
+      background-color: #B8860B; /* goldenrod */
       display: flex;
       justify-content: center;
-      padding: 10px 0;
+      padding: 10px;
       position: relative;
       z-index: 100;
     }
+    /* Toggle button for mobile */
+    .nav-toggle {
+      display: none;
+      color: #B8860B; /* gold */
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transform: scale(1.05);
+    }
+    /* Navigation links container */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      font: 30;
+      justify-content: space-around;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      width: 100%;
+    }
+    /* Navigation link item */
     .nav-item {
       position: relative;
       margin: 0 5px;
     }
-    .nav-bar a.nav-link {
+    /* Common link styling */
+    .nav-bar a.nav-link,
+    .nav-links li a {
       color: white;
-      padding: 5px 12px;
+      padding: 5px 20px;
       text-decoration: none;
       text-align: center;
-      font-size: 18px;
+      font-size: 25px;          /* Adjust font size */
+      font-family: 'Georgia', serif;
+      font-weight: 300;         /* Make text bolder */
       display: block;
     }
-    .nav-bar a.nav-link:hover {
-      background-color: #D4AC0D;
+    /* Hover effect */
+    .nav-bar a.nav-link:hover,
+    .nav-links li a:hover {
+      background-color: #ebca48; /* darker gold */
       border-radius: 15px;
+      transform: scale(1.05);
     }
     /* Dropdown menu styles */
     .dropdown-menu {
       display: none;
       position: absolute;
-      background-color: #fafafa;
-      min-width: 200px;
+      background-color: #ebca48;
+      min-width: 300px;
       box-shadow: 0 8px 16px;
       z-index: 101;
       border-radius: 5px;
-      margin-top: 5px;
+      margin-top: 2px;
       left: 0;
+      font-family: 'Georgia', serif;
     }
     .dropdown-menu a {
       color: #7D6608;
@@ -144,28 +230,45 @@
       display: block;
       text-align: left;
       font-size: 16px;
+      transform: scale(1.05);
+      font-family: 'Georgia', serif;
+      font-weight: 300; /* Make text bolder */
     }
     .dropdown-menu a:hover {
       background-color: #7d660839;
       color: #7D6608;
+      transform: scale(1.05);
     }
     .nav-item:hover .dropdown-menu {
       display: block;
+      transform: scale(1.05);
     }
-    
-    /* Slideshow container styles */
+    .slideshow-wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      flex-wrap: wrap; /* Optional: allow stacking on small screens */
+    }
     .slideshow-container {
+      flex: 1 1 45%;
+      max-width: 100%;
       max-width: 100%;
       position: relative;
       margin: 30px auto;
     }
-    
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
     /* Hide images by default */
     .slide {
       display: none;
       text-align: center;
     }
-    
     /* Next & previous buttons */
     .prev, .next {
       cursor: pointer;
@@ -182,24 +285,20 @@
       user-select: none;
       background-color: rgba(0,0,0,0.4);
     }
-    
     /* Position the "next button" to the right */
     .next {
       right: 0;
       border-radius: 3px 0 0 3px;
     }
-    
     /* On hover, add a black background color with a little bit see-through */
     .prev:hover, .next:hover {
       background-color: rgba(0,0,0,0.8);
     }
-    
     /* The dots/bullets/indicators */
     .dots-container {
       text-align: center;
       margin-top: -20px;
     }
-    
     .dot {
       cursor: pointer;
       height: 15px;
@@ -210,41 +309,19 @@
       display: inline-block;
       transition: background-color 0.6s ease;
     }
-    
     .active, .dot:hover {
       background-color: #B8860B;
     }
-    .slideshow-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 20px;
-      padding: 20px;
-      flex-wrap: wrap; /* Optional: allow stacking on small screens */
-    }
-
-    .slideshow-container {
-      flex: 1 1 45%;
-      max-width: 45%;
-    }
-    /* Fading animation */
-    .fade {
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-    
     @keyframes fade {
       from {opacity: .4}
       to {opacity: 1}
     }
-    
     /* Make the images responsive */
     .slide img {
       max-width: 50%;
       height: 50%;
       max-height: 70%; /* Set maximum height for images */
     }
-    
     /* Footer styles */
     footer {
       background-color: #9C640C;
@@ -255,78 +332,50 @@
     .footer-nav {
       display: flex;
       justify-content: center;
-      padding: 10px 0;
-      border-bottom: 1px solid #555;
+      padding: 20px 0; /* news careers partners */
+      border-bottom: 5px solid #fffaf0;
     }
     .footer-nav a {
       color: white;
       padding: 0 18px;
       text-decoration: none;
-      font-size: 20px;
+      font-size: 22px;
     }
     .contact-info {
       text-align: center;
       padding: 1px 0;
-      font-size: 15px;
+      font-size: 20px;
       line-height: 1.2;
     }
-    .social-links {
-      display: flex;
-      justify-content: center;
-      padding: 3px 0;
-    }
-    .social-links a {
-      margin: 0 10px;
-    }
-    .social-icon {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background-color: #1a1a1a;
-      color: gold;
-      font-size: 20px;
-      transition: all 0.3s ease;
-    }
-    .social-icon:hover {
-      transform: scale(1.1);
-    }
-    .bold {
-      font-weight: bold;
-    }
     .slide2 img {
-  max-width: 50%;
-  height: auto;
+      max-width: 50%;
+      height: auto;
+    } 
+    /* Hide by default */
+    .slide2 {
+      display: none;
+      text-align: center;
+    }
+    .fade2 {
+      animation-name: fade2;
+      animation-duration: 1.5s;
 }
 
-/* Hide by default */
-.slide2 {
-  display: none;
-  text-align: center;
-}
+    @keyframes fade2 {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
 
-.fade2 {
-  animation-name: fade2;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade2 {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-.dot2 {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
+    .dot2 {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
 
 .active2, .dot2:hover {
   background-color: #B8860B;
@@ -362,12 +411,41 @@
     max-width: 100%;
     flex-basis: 100%;
     }
+    .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    display: none; /* Hidden by default */
+    background-color: #333;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+  }
+
+  .nav-links.show {
+    display: flex; /* Show when toggled */
+  }
+
+  .nav-links li {
+    text-align: left;
+    padding-left: 20px;
+    border-bottom: 1px solid #444;
+  }
 }
   </style>
 </head>
 <body>
   <header>
     <div class="header-left">
+      <div class="search-box">
+        <input type="text" id="searchBox" placeholder="Search our contents">
+        <button onclick="searchContent()"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+    <div class="header-center">
       <div class="logo-section">
         <img src="images/Officiallogo.png" alt="AN International Logo">
         <div class="logo-text">
@@ -376,13 +454,8 @@
         </div>
       </div>
     </div>
-  
-    <div class="header-center"></div>
-  
     <div class="header-right">
-      <p>📞 +66 082-593-2084</p>
-      <p>✉️ <a href="mailto:contact@aninternational.com.np">contact@aninternational.com.np</a></p>
-  
+      <p>📞 +66 082-593-2084 ✉️<a href="mailto:contact@aninternational.com.np">contact@aninternational.com.np</a></p>
       <div class="social-links">
         <a href="https://www.facebook.com/profile.php?id=61575658254817&sk=about" target="_blank">
           <div class="social-icon">
@@ -662,12 +735,25 @@ function resetSlideTimer2() {
   clearInterval(slideTimer2);
   startSlideTimer2();
 }
-
 // Initialize second slideshow
 window.addEventListener('load', () => {
   showSlides2(slideIndex2);
   startSlideTimer2();
 });
+  function toggleNav() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+
+function searchContent() {
+  const query = document.getElementById('searchBox').value.toLowerCase();
+  const content = document.body.innerText.toLowerCase();
+
+  if (query && content.includes(query)) {
+    alert("Search term found on this page.");
+  } else {
+    alert("No match found.");
+  }
+} 
 </script>
 </body>
 </html>
