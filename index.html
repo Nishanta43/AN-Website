@@ -139,7 +139,7 @@
       border-radius: 10px;
       margin-left: 10px;
       font-size: 12px;
-      font-weight: semi-bold;
+      font-weight: 600;
       text-align: center;
       cursor: pointer;
       transition: background-color 0.3s ease;
@@ -348,7 +348,7 @@
     }
 
     @keyframes fade {
-      from {opacity: .4}
+      from {opacity: 0.4}
       to {opacity: 1}
     }
      /* Mobile Responsive Styles */
@@ -378,6 +378,13 @@
       transform: none;
       word-wrap: break-word;
       overflow-wrap: break-word;
+    }
+    .slideshow-wrapper {
+      flex-direction: column;
+    }
+    .slideshow-container, .still-image {
+      max-width: 100%;
+      flex: 1 1 100%;
     }
     /* Option 1: Hide contact info on very small screens */
     @media screen and (max-width: 480px) {
@@ -505,38 +512,36 @@
       max-width: 100%;
       flex: 1 1 100%;
     }
-    @media screen and (max-width: 768px) {
   /* Footer adjustments for mobile */
-
-  .footer-nav {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0;
-  }
-  
-  .footer-nav a {
-    padding: 10px 0;
-    font-size: 10px;
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-  .contact-info {
-    padding: 10px;
-    font-size: 10px;
-  }
-  
-  .social-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .social-icon {
-    width: 20px;
-    height: 20px;
-    font-size: 10px;
-    margin: 5px;
-  }
+    .footer-nav {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 0;
+    }
+    
+    .footer-nav a {
+      padding: 10px 0;
+      font-size: 10px;
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+    .contact-info {
+      padding: 10px;
+      font-size: 10px;
+    }
+    
+    .social-links {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .social-icon {
+      width: 20px;
+      height: 20px;
+      font-size: 10px;
+      margin: 5px;
+    }
 }
 </style>
 </head>
