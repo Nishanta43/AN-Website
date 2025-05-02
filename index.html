@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AN International – Research, Innovation, and Sustainability Solutions.">
+  <meta name="keywords" content="AN International, Sustainability, Health, Environment, Research, Innovation">
   <title>AN International - Company title</title>
   <style>
     body {
-      font-family: ''Georgia', serif;
+      font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;background-color: #FFFFFF; /* white */
       color: #2E8B57;            /* green text */
@@ -351,198 +353,211 @@
       from {opacity: 0.4}
       to {opacity: 1}
     }
-     /* Mobile Responsive Styles */
+    /* Mobile Responsive Styles */
     @media screen and (max-width: 768px) {
-    /* Header adjustments */
-    header {
-      flex-direction: column;
-      padding: 5px;
-    }
-    
-    .header-left, .header-center, .header-right {
-      width: 100%;
-      margin: 5px 0;
-      justify-content: center;
-      text-align: center;
-    }
-    
-    .header-right {
-      align-items: center;
-    }
-    /* Fix for header-right p and contact info on mobile */
-    .header-right p, 
-    .header-right p a {
-      font-size: 14px;
-      padding: 5px;
-      background: transparent;
-      transform: none;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-    }
-    .slideshow-wrapper {
-      flex-direction: column;
-    }
-    .slideshow-container, .still-image {
-      max-width: 100%;
-      flex: 1 1 100%;
-    }
-    /* Option 1: Hide contact info on very small screens */
-    @media screen and (max-width: 480px) {
-      .header-right p:first-child {
-        display: none;
-      }
-    }
-    .logo-section {
-      margin: 0;
-      justify-content: center;
-    }
-    
-    .logo-text h1 {
-      font-size: 32px;
-    }
-    
-    .logo-text p {
-      font-size: 16px;
-    }
-    
-    /* Navigation menu adjustments */
-    .nav-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding: 10px;
-      background-color: #054b03;
-      color: white;
-      font-size: 18px;
-      cursor: pointer;
-      border: none;
-      border-radius: 0;
-    }
-    
-    .nav-toggle i {
-      margin-right: 8px;
-    }
-    
-    .nav-bar {
-      position: fixed;
-      top: 0;
-      left: -280px; /* Start off-screen */
-      width: 280px;
-      height: 100vh;
-      background-color: #B8860B;
-      flex-direction: column;
-      justify-content: flex-start;
-      padding: 20px 0;
-      transition: left 0.3s ease;
-      overflow-y: auto;
-      z-index: 1000;
-    }
-    
-    .nav-bar.open {
-      left: 0; /* Slide in when open */
-      box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
-    }
-    
-    /* Close button inside the sidebar */
-    .close-nav {
-      display: block;
-      position: absolute;
-      top: 1px;
-      right: 1px;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 13px;
-      cursor: pointer;
-    }
-    
-    .nav-links {
-      flex-direction: column;
-    }
-    .nav-item {
-      width: 100%;
-      margin: 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    .nav-bar a.nav-link,
-    .nav-links li a {
-      padding: 15px;
-      text-align: left;
-      font-size: 18px;
-    }
-    /* Dropdown adjustments */
-    .dropdown-menu {
-      position: static;
-      display: none;
-      width: 100%;
-      box-shadow: none;
-      background-color: rgba(0, 0, 0, 0.1);
-      border-radius: 0;
-    }
-    .dropdown-menu a {
-      padding: 12px 30px;
-      font-size: 16px;
-    }
-    /* Dropdown toggle indicator */
-    .dropdown-indicator {
-      float: right;
-    }
-    /* Overlay when menu is open */
-    .nav-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 999;
-    }
-    .nav-overlay.active {
-      display: block;
-    }
-    /* Slideshow adjustments */
-    .slideshow-wrapper {
-      flex-direction: column;
-      width: 95%;
-    }
-    .slideshow-container,
-    .still-image {
-      max-width: 100%;
-      flex: 1 1 100%;
-    }
-  /* Footer adjustments for mobile */
-    .footer-nav {
-      flex-direction: column;
-      align-items: center;
-      padding: 10px 0;
-    }
-    
-    .footer-nav a {
-      padding: 10px 0;
-      font-size: 10px;
-      display: block;
-      width: 100%;
-      text-align: center;
-    }
-    .contact-info {
-      padding: 10px;
-      font-size: 10px;
-    }
-    
-    .social-links {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    
-    .social-icon {
-      width: 20px;
-      height: 20px;
-      font-size: 10px;
-      margin: 5px;
-    }
-}
+  header {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .header-left, .header-center, .header-right {
+    width: 100%;
+    margin: 5px 0;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header-right p, .header-right p a {
+    font-size: 14px;
+    padding: 5px;
+    background: transparent;
+    transform: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .slideshow-wrapper {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .slideshow-container, .still-image {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .logo-section {
+    margin: 0;
+    justify-content: center;
+  }
+
+  .logo-text h1 {
+    font-size: 32px;
+  }
+
+  .logo-text p {
+    font-size: 16px;
+  }
+
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #054b03;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 0;
+  }
+
+  .nav-toggle i {
+    margin-right: 8px;
+  }
+
+  .nav-bar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background-color: #B8860B;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px 0;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .nav-bar.open {
+    left: 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .close-nav {
+    display: block;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav-item {
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .nav-bar a.nav-link,
+  .nav-links li a {
+    padding: 15px;
+    text-align: left;
+    font-size: 18px;
+    color: white;
+    display: block;
+    width: 100%;
+  }
+
+  .dropdown-indicator {
+    float: right;
+  }
+
+  /* Dropdown Menu */
+  .dropdown-menu {
+    display: none;
+    position: static;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .nav-item.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu a {
+    padding: 12px 30px;
+    font-size: 16px;
+    display: block;
+  }
+
+  /* Overlay when menu is open */
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .nav-overlay.active {
+    display: block;
+  }
+
+  /* Footer */
+  .footer-nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .footer-nav a {
+    padding: 10px 0;
+    font-size: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-info {
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .social-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .social-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    margin: 5px;
+  }
+  .slideshow-wrapper {
+    flex-direction: column;
+  }
+  .slideshow-container,
+  .still-image {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+  /* Extra small screen fix */
+  @media screen and (max-width: 480px) {
+  .header-right p:first-child {
+    display: none;
+  }
+}    
+  
 </style>
 </head>
 <body>
