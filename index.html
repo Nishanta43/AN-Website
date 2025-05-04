@@ -449,25 +449,19 @@
     }
 
     /* Mobile Responsive Styles */
-    @media screen and (max-width: 768px) {
-    header {
+@media screen and (max-width: 768px) {
+  /* Header Section */
+  header {
     flex-direction: column;
     padding: 5px;
-    }
+  }
 
   .header-left, .header-center, .header-right {
     width: 100%;
     margin: 5px 0;
     justify-content: center;
     text-align: center;
-    }
-    .side-by-side-container {
-      flex-direction: column; /* Stack vertically on small screens */
-    }
-    
-    .still-image3, .still-image4 {
-      margin-bottom: 20px; /* Add space between items when stacked */
-    }
+  }
 
   .header-right p, .header-right p a {
     font-size: 14px;
@@ -476,31 +470,45 @@
     transform: none;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    }
+  }
 
-  .slideshow-wrapper {
-    flex-direction: column;
-    width: 95%;
-   }
-
-  .slideshow-container, .still-image {
-    max-width: 100%;
-    flex: 1 1 100%;
-    }
-
+  /* Logo Section */
   .logo-section {
     margin: 0;
     justify-content: center;
-    }
+  }
+
+  .logo-section img {
+    height: 50px;
+  }
 
   .logo-text h1 {
-    font-size: 32px;
-    }
+    font-size: 22px;
+  }
 
   .logo-text p {
-    font-size: 16px;
-    }
+    font-size: 12px;
+  }
 
+  /* Search Box */
+  .search-box {
+    margin: 10px auto;
+    width: 90%;
+    max-width: 300px;
+  }
+
+  /* Login/Registration Buttons */
+  .login-button, .registration-button {
+    padding: 6px 12px;
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  .registration-button {
+    font-size: 16px;
+  }
+
+  /* Navigation Menu */
   .nav-toggle {
     display: flex;
     align-items: center;
@@ -508,16 +516,12 @@
     width: 100%;
     padding: 10px;
     background-color: #054b03;
-    color: white;
-    font-size: 18px;
+    color: gold;
+    font-size: 16px;
     cursor: pointer;
     border: none;
     border-radius: 0;
-    }
-
-  .nav-toggle i {
-    margin-right: 8px;
-    }
+  }
 
   .nav-bar {
     position: fixed;
@@ -525,14 +529,14 @@
     left: -280px;
     width: 280px;
     height: 100vh;
-    background-color: #B8860B;
+    background-color: #054b03;
     flex-direction: column;
     justify-content: flex-start;
     padding: 20px 0;
     transition: left 0.3s ease;
     overflow-y: auto;
     z-index: 1000;
-    }
+  }
 
   .nav-bar.open {
     left: 0;
@@ -542,34 +546,34 @@
   .close-nav {
     display: block;
     position: absolute;
-    top: 1px;
-    right: 1px;
+    top: 10px;
+    right: 10px;
     background: none;
     border: none;
-    color: white;
-    font-size: 13px;
+    color: gold;
+    font-size: 18px;
     cursor: pointer;
-    }
+  }
 
   .nav-links {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
-    }
+  }
 
   .nav-item {
     width: 100%;
     margin: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  }
 
   .nav-bar a.nav-link,
   .nav-links li a {
     padding: 15px;
     text-align: left;
-    font-size: 18px;
-    color: white;
+    font-size: 16px;
+    color: gold;
     display: block;
     width: 100%;
   }
@@ -583,9 +587,10 @@
     display: none;
     position: static;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #167513;
     box-shadow: none;
     border-radius: 0;
+    min-width: 100%;
   }
 
   .nav-item.open .dropdown-menu {
@@ -593,8 +598,8 @@
   }
 
   .dropdown-menu a {
-    padding: 12px 30px;
-    font-size: 16px;
+    padding: 12px 20px;
+    font-size: 14px;
     display: block;
   }
 
@@ -614,6 +619,72 @@
     display: block;
   }
 
+  /* Slideshow and Images */
+  .slideshow-wrapper {
+    flex-direction: column;
+    width: 95%;
+    gap: 10px;
+  }
+
+  .slideshow-container, .still-image {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .prev, .next {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  /* Astro Image Section */
+  .astro-image {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .astro-img {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+  }
+
+  /* Research Support Section */
+  .research-support, .data-support {
+    flex-direction: column;
+    margin: 10px 15px;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .research-content-area h2, .data-content-area h2 {
+    font-size: 16px;
+  }
+
+  .research-img, .data-img {
+    width: 100%;
+  }
+
+  /* Card Container */
+  .card-container {
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Side by Side Container */
+  .side-by-side-container {
+    flex-direction: column;
+  }
+  
+  .still-image3, .still-image4 {
+    margin-bottom: 20px;
+  }
+
   /* Footer */
   .footer-nav {
     flex-direction: column;
@@ -623,7 +694,7 @@
 
   .footer-nav a {
     padding: 10px 0;
-    font-size: 10px;
+    font-size: 14px;
     display: block;
     width: 100%;
     text-align: center;
@@ -631,7 +702,7 @@
 
   .contact-info {
     padding: 10px;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .social-links {
@@ -640,26 +711,37 @@
   }
 
   .social-icon {
-    width: 20px;
-    height: 20px;
-    font-size: 10px;
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
     margin: 5px;
   }
-  .slideshow-wrapper {
-    flex-direction: column;
-  }
-  .slideshow-container,
-  .still-image {
-    max-width: 100%;
-    flex: 1 1 100%;
-  }
+
   /* Extra small screen fix */
   @media screen and (max-width: 480px) {
-  .header-right p:first-child {
-    display: none;
+    .header-right p:first-child {
+      display: none;
+    }
+    
+    .logo-text h1 {
+      font-size: 18px;
+    }
+    
+    .logo-text p {
+      font-size: 10px;
+    }
+    
+    .logo-section img {
+      height: 40px;
+    }
+    
+    .social-icon {
+      width: 20px;
+      height: 20px;
+      font-size: 10px;
+    }
   }
-}    
-  
+}
 </style>
 </head>
 <body>
