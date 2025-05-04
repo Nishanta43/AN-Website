@@ -259,12 +259,59 @@
       flex-wrap: nowrap; /* Ensure no wrapping */
     }
     .slideshow-container {
-      flex: 1 1 100%; /* Slide takes 60% of the screen */
+      flex: 1 1 auto%; /* Slide takes 60% of the screen */
       max-width: 100%; /* Ensures it doesn't stretch beyond 60% */
       position: relative;
-      margin-left: 0; /* Move slide to the left */
+      margin-left: auto; /* Move slide to the left */
       margin-right: auto; /* Ensures the slide container is aligned to the left */
       justify-content: right;
+      overflow: hidden;
+    }
+    .slide {
+      display: none;
+      text-align: center;
+      width: 100%;
+    }
+    
+    .slideshow-img {
+      width: auto%;
+      height: auto;
+      display: block;
+      max-height: 500px;
+      object-fit: cover;
+    }
+      /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: gold;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: rgba(0,0,0,0.4);
+    }
+    
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    
+    /* On hover, add a darker background */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
     }
     .astro-image {
       display: flex;
@@ -360,62 +407,6 @@
       from {opacity: 0.4;}
       to {opacity: 1;}
     }
-    
-    /* Fading animation */
-    .fade {
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-
-    /* Hide images by default */
-    .slide {
-      display: none;
-      text-align: center;
-    }
-
-    /* Next & previous buttons */
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      margin-top: 22px;
-      padding: 16px;
-      color: gold;
-      font-weight: bold;
-      font-size: 18px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-      background-color: rgba(0,0,0,0.4);
-    }
-
-    /* Position the "next button" to the right */
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-
-    /* On hover, add a black background color with a little bit see-through */
-    .prev:hover, .next:hover {
-      background-color: rgba(0,0,0,0.8);
-    }
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px; /* space between cards */
-      padding: 20px;
-    }
-    .card {
-      width: 300px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 16px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      text-align: center;
-      background-color: #fff;
-    }
     /* Footer styles */
     footer {
       background-color: #054b03;
@@ -448,7 +439,7 @@
       to {opacity: 1}
     }
 
-    /* Mobile Responsive Styles */
+/* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
   /* Header Section */
   header {
@@ -621,21 +612,27 @@
 
   /* Slideshow and Images */
   .slideshow-wrapper {
-    flex-direction: column;
-    width: 95%;
-    gap: 10px;
-  }
-
-  .slideshow-container, .still-image {
-    max-width: 100%;
-    flex: 1 1 100%;
-  }
-
-  .prev, .next {
-    padding: 10px;
-    margin-top: 10px;
-    font-size: 16px;
-  }
+      width: 95%;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .slideshow-container {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    
+    .slideshow-img {
+      max-height: none;
+      width: 100%;
+      object-fit: contain;
+    }
+    
+    .prev, .next {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: -20px;
+    }
 
   /* Astro Image Section */
   .astro-image {
@@ -846,31 +843,30 @@
     </div>
 </nav>
 <body>
-<div class="slideshow-wrapper">
-  <div class="slideshow-container">
-    <div class="main slide fade">
-      <img src="images/main.png" alt="Slideshow Image 1">
+  <div class="slideshow-wrapper">
+    <div class="slideshow-container">
+      <div class="slide fade">
+        <img src="images/main.png" alt="Slideshow Image 1" class="slideshow-img">
+      </div>
+      <div class="slide fade">
+        <img src="images/main1.png" alt="Slideshow Image 2" class="slideshow-img">
+      </div>
+      <div class="slide fade">
+        <img src="images/main2.png" alt="Slideshow Image 3" class="slideshow-img">
+      </div>
+      <div class="slide fade">
+        <img src="images/main3.png" alt="Slideshow Image 4" class="slideshow-img">
+      </div>
+      <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
     </div>
-    <div class="slide fade">
-      <img src="images/main1.png" alt="Slideshow Image 2">
-    </div>
-    <div class="slide fade">
-      <img src="images/main2.png" alt="Slideshow Image 3">
-    </div>
-    <div class="slide fade">
-      <img src="images/main3.png" alt="Slideshow Image 3">
-    </div>
-    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
-  </div>
   <!-- astro Image -->
   <div class="astro-image">
     <div class="content-area">
     <h1>Astrological Services</h1>    
     <a href="https://form.jotform.com/251214251755451" 
        target="_blank" 
-       class="registration-button">Book For Services</a>
-    <h2>Services Include</h2>
+       class="registration-button">Book For Service</a>
   </div>
   <img src="images/sign.png" alt="Astrology" class="astro-img">
 </div>
