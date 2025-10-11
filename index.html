@@ -750,7 +750,19 @@
       .astro-image {
         padding: 10px;
       }
+      .close-nav {
+      display: none; /* hide by default */
+      }
+
+    @media screen and (max-width: 767px) {
+    .close-nav {
+    display: block; /* visible only in mobile menu */
     }
+    .nav-bar:not(.open) .close-nav {
+    display: none;
+    }
+}
+
   </style>
 </head>
 <body>
