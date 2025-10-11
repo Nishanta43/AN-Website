@@ -274,7 +274,11 @@
     .nav-item:hover .dropdown-menu {
       display: block;
     }
-
+    /* Hide close button by default */
+    .close-nav { display: none; }
+    @media screen and (max-width: 767px) {
+    .close-nav { display: block; }
+    }
     /* Slideshow Styles */
     .slideshow-wrapper {
       display: flex;
