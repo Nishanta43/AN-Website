@@ -460,54 +460,61 @@
     }
 
     /* Footer Styles */
-    footer {
-      background-color: #054b03;
-      color: gold;
-      padding: 12px 0;
-      margin-top: 30px;
+    footer { 
+      background-color: #054b03; 
+      color: gold; 
+      padding: 0; 
+      margin-top: auto; 
+      border-top: 1px solid gold; 
+    }
+    
+    .footer-nav { 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      flex-wrap: wrap; 
+      gap: 10px; 
+      padding: 10px; 
+      border-bottom: 1px solid gold; 
+      font-family: 'Georgia', serif; 
+    }
+    
+    .footer-nav a { 
+      color: gold; 
+      padding: 10px 20px; 
+      text-decoration: none; 
+      font-size: 16px; 
+      font-family: 'Georgia', serif; 
+      display: block;
+      transition: all 0.3s ease; 
+    }
+    
+    .footer-nav a:hover { 
+      background-color: rgba(255, 215, 0, 0.2); 
+      border-radius: 5px; 
+      transform: scale(1.05);
+    }
+    
+    .contact-info { 
+      text-align: center; 
+      padding: 10px; 
+      font-size: 15px; 
+      line-height: 1.2; 
     }
 
-    .footer-nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      padding: 12px 0;
-      border-bottom: 1px solid gold;
-      font-family: 'Georgia', serif;
+    /* This removes the hidden bulky space around text to match nav bar sizing */
+    .contact-info p { 
+      margin: 5px 0; 
     }
-
-
-    .footer-nav a {
-      color: gold;
-      padding: 6px 10px;
-      text-decoration: none;
-      font-size: 16px;
-      font-family: 'Georgia', serif;
-      transition: background-color 0.3s ease;
+    
+    .contact-info a { 
+      color: gold; 
+      margin: 0; 
+      text-decoration: none; 
     }
-
-    .footer-nav a:hover {
-      background-color: rgba(255, 215, 0, 0.2);
-      border-radius: 5px;
-    }
-
-    .contact-info {
-      text-align: center;
-      padding: 12px 15px;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .contact-info a {
-      color: gold;
-      margin: 6px 0;
-      text-decoration: none;
-    }
-
-    .contact-info a:hover {
-      text-decoration: underline;
+    
+    .contact-info a:hover { 
+      text-decoration: underline; 
     }
 
     /* Tablet Styles (768px - 1024px) */
