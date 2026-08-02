@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="AN International – Research, Innovation, and Sustainability Solutions.">
   <meta name="keywords" content="AN International, Sustainability, Health, Environment, Research, Innovation">
-  <title>Our Team - AN International</title>
+  <title>Dr. Nishanta Sharma - Our Team</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * { box-sizing: border-box; }
@@ -61,40 +61,170 @@
     .nav-bar a.nav-link:hover, .nav-links li a:hover { background-color: rgba(255, 215, 0, 0.2); border-radius: 5px; transform: scale(1.05); }
     
     .close-nav { display: none; }
-    @media screen and (max-width: 767px) { .close-nav { display: block; } }
-
+    
     /* Footer Styles */
-    footer { background-color: #054b03; color: gold; padding: 12px 0; margin-top: auto; }
-    .footer-nav { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 18px; padding: 12px 0; border-bottom: 1px solid gold; font-family: 'Georgia', serif; }
-    .footer-nav a { color: gold; padding: 6px 10px; text-decoration: none; font-size: 16px; font-family: 'Georgia', serif; transition: background-color 0.3s ease; }
-    .footer-nav a:hover { background-color: rgba(255, 215, 0, 0.2); border-radius: 5px; }
-    .contact-info { text-align: center; padding: 12px 15px; font-size: 15px; line-height: 1.6; }
-    .contact-info a { color: gold; margin: 6px 0; text-decoration: none; }
+    footer { background-color: #054b03; color: gold; padding: 0; margin-top: auto; border-top: 1px solid gold; }
+    .footer-nav { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px; padding: 10px; border-bottom: 1px solid gold; font-family: 'Georgia', serif; }
+    .footer-nav a { color: gold; padding: 10px 20px; text-decoration: none; font-size: 16px; font-family: 'Georgia', serif; display: block; transition: all 0.3s ease; }
+    .footer-nav a:hover { background-color: rgba(255, 215, 0, 0.2); border-radius: 5px; transform: scale(1.05); }
+    .contact-info { text-align: center; padding: 10px; font-size: 15px; line-height: 1.2; }
+    .contact-info p { margin: 5px 0; }
+    .contact-info a { color: gold; margin: 0; text-decoration: none; }
     .contact-info a:hover { text-decoration: underline; }
 
-    /* Construction Section */
-    .construction-container {
+    /* --- Resume Section Styles --- */
+    .resume-wrapper {
+      display: flex;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      gap: 30px;
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    .resume-sidebar {
+      flex: 1;
+      min-width: 250px;
+      max-width: 300px;
+      background-color: #d4df9e; /* Light golden green */
+      padding: 30px 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      align-self: flex-start;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #054b03;
+      margin-bottom: 15px;
+    }
+
+    .resume-sidebar h2 {
+      margin: 0;
+      color: #054b03;
+      font-size: 24px;
+    }
+
+    .resume-sidebar .title {
+      color: #167513;
+      font-style: italic;
+      margin-top: 5px;
+      margin-bottom: 25px;
+      font-size: 16px;
+    }
+
+    .resume-links {
       display: flex;
       flex-direction: column;
+      gap: 12px;
+    }
+
+    .resume-links a {
+      display: flex;
       align-items: center;
       justify-content: center;
-      flex-grow: 1;
-      text-align: center;
-      padding: 50px 20px;
-    }
-    .construction-container h1 {
-      font-size: 40px;
+      gap: 10px;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.7);
       color: #054b03;
-      margin-bottom: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      font-size: 14px;
     }
-    .construction-container p {
-      font-size: 20px;
-      color: #167513;
+
+    .resume-links a.btn-download {
+      background-color: #054b03;
+      color: gold;
     }
-    .construction-icon {
-      font-size: 60px;
-      color: #FFD700;
-      margin-bottom: 20px;
+
+    .resume-links a:hover {
+      background-color: rgba(255, 215, 0, 0.5);
+      transform: translateY(-2px);
+    }
+    
+    .resume-links a.btn-download:hover {
+      background-color: #167513;
+    }
+
+    .resume-main {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .resume-section {
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border-left: 5px solid #054b03;
+    }
+
+    .resume-section h3 {
+      color: #054b03;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 22px;
+      border-bottom: 1px solid #FFD700;
+      padding-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .resume-section p {
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+    }
+
+    .resume-section ul {
+      margin: 0;
+      padding-left: 20px;
+      line-height: 1.8;
+      color: #333;
+    }
+    
+    .job-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+    
+    .job-logo {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+    
+    .job-title {
+      font-weight: bold;
+      color: #054b03;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+    
+    /* Target job titles specifically inside the header with logo so they align perfectly */
+    .job-header .job-title {
+      margin-top: 0;
+    }
+    
+    .job-meta {
+      font-style: italic;
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 5px;
     }
 
     /* Responsive adjustments */
@@ -109,7 +239,14 @@
       .nav-bar.open { left: 0; }
       .nav-bar a.nav-link { padding: 15px 20px; text-align: left; font-size: 16px; width: 100%; border-radius: 0; }
       .close-nav { position: absolute; top: 15px; right: 15px; background: none; border: none; color: gold; font-size: 20px; cursor: pointer; }
-      .construction-container h1 { font-size: 28px; }
+      
+      .resume-wrapper {
+        flex-direction: column;
+        padding: 0 15px;
+      }
+      .resume-sidebar {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
@@ -135,7 +272,7 @@
         <a href="https://www.facebook.com/profile.php?id=61575658254817&sk=about" target="_blank"><div class="social-icon"><i class="fab fa-facebook-f"></i></div></a>
         <a href="https://www.youtube.com/@ANdiggi" target="_blank"><div class="social-icon"><i class="fab fa-youtube"></i></div></a>
         <a href="https://www.linkedin.com/company/anint" target="_blank"><div class="social-icon"><i class="fab fa-linkedin-in"></i></div></a>
-        <a href="https://accounts.zoho.com/signin?servicename=VirtualOffice&signupurl=https%3A%2F%2Fwww.zoho.com%2Fmail%2Fzohomail-pricing.html&serviceurl=https%3A%2F%2Fmail.zoho.com%2Fzm%2F#mail/folder/inbox" target="_blank" class="login-button">User Login</a>
+        <a href="#" target="_blank" class="login-button">User Login</a>
       </div>
     </div>
   </header>
@@ -151,10 +288,135 @@
     <div class="nav-item"><a href="contactinformation.html" class="nav-link">Contact Us</a></div>
   </nav>
 
-  <div class="construction-container">
-    <i class="fas fa-tools construction-icon"></i>
-    <h1>Website Under Construction</h1>
-    <p>We are currently working on this page. Please check back later!</p>
+  <!-- Resume Main Content -->
+  <div class="resume-wrapper">
+    
+    <!-- Sidebar for Profile and Links -->
+    <aside class="resume-sidebar">
+      <img src="images/image Medium.jpeg" alt="Dr. Nishanta Sharma" class="profile-pic">
+      <h2>Dr. Nishanta Sharma</h2>
+      <p class="title">Quantitative Researcher | Statistical Modelling | Economic Modelling</p>
+      
+      <div class="resume-links">
+        <a href="Nishanta CV.pdf" target="_blank" class="btn-download"><i class="fas fa-file-pdf"></i> Download CV</a>
+        <a href="https://github.com/Nishanta43" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/nsharmapkr/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=DtCreuwAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+        <a href="https://orcid.org/0000-0003-2801-2305" target="_blank"><i class="fab fa-orcid"></i> ORCID</a>
+        <a href="https://www.hitap.net/en/staff-detail/?person_id=99" target="_blank"><i class="fas fa-globe"></i> HITAP Profile</a>
+        <a href="mailto:nishanta.sharma012@gmail.com"><i class="fas fa-envelope"></i> Contact</a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="resume-main">
+
+      <section class="resume-section">
+        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+        <div class="job-title">Doctor of Philosophy (Ph.D.) Program in Development and Sustainability</div>
+        <div class="job-meta">Asian Institute of Technology, Thailand | 2020 - 2024</div>
+        <ul>
+          <li><strong>Course overview:</strong> Urban Environmental Management Systems; Climate Compatible and Sustainable Infrastructure Development; Development Economics; Forestry and REDD+</li>
+          <li><strong>PhD Dissertation Title:</strong> Identifying Hazards and Developing Resilience for Sustainable Urban Tourism: A Case Study of Pokhara, Nepal</li>
+        </ul>
+        <div class="job-title">Master of Science in Population, Gender and Development</div>
+        <div class="job-meta">2017 - 2019</div>
+        <div class="job-title">Bachelors in Development Studies</div>
+        <div class="job-meta">2012 - 2016</div>
+      </section>
+
+      <section class="resume-section">
+        <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
+        
+        <div class="job-header">
+          <img src="images/hitaplogo.png" alt="HITAP Logo" class="job-logo">
+          <div>
+            <div class="job-title">Health Intervention and Technology Assessment Program Foundation</div>
+            <div class="job-meta">Researcher; Full Time; Onsite | Jan 2024 - Ongoing</div>
+          </div>
+        </div>
+        <ul>
+          <li>Principal Investigator for climate change impact on health, health systems, and economic implications using statistical, machine learning, and GIS approaches; Quantifying the economy-wide macroeconomic impacts of solarisation in Thailand using CGE modelling (Wellcome Trust funded); Systematically mapping human epidemiological evidence linking microplastic exposure to clinically measurable health.</li>
+          <li>Secured multi-source funding (Thailand Science Research and Innovation (TSRI); Wellcome Trust).</li>
+          <li>Designed and delivered research methods and statistics training.</li>
+          <li>Established domestic and international partnerships through participation in working groups on carbon/climate-health research and policy integration.</li>
+          <li>Serves as an advisory board member for a Climate-Sensitive Infectious Disease network group.</li>
+        </ul>
+
+        <div class="job-header">
+          <img src="images/aitlogo.jpeg" alt="AIT Logo" class="job-logo">
+          <div>
+            <div class="job-title">Asian Institute of Technology (AIT)</div>
+            <div class="job-meta">Graduate Research and Teaching Assistant; Full Time; Onsite | Jan 2021 - Nov 2024</div>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Teaching Assistant:</strong> Taught Quantitative Research Methods to 50+ MSc/PhD students; achieved 100% pass rates and doubled average exam scores since 2021. Guided 100+ graduate students in data analysis and academic writing.</li>
+          <li><strong>Research Assistant:</strong> Ran complex projects with 200+ variables For Living Delta Hub Project.</li>
+          <li><strong>Student Assistant:</strong> Co-developed MSc programs in Urban Development & Sustainability; created two EbA frameworks for National University of Laos; contributed to UNEP climate finance deliverables.</li>
+        </ul>
+
+        <div class="job-header">
+          <img src="images/UNESCAPlogo.png" alt="UNESCAP Logo" class="job-logo">
+          <div>
+            <div class="job-title">United Nations Economic and Social Commission for Asia and the Pacific (ESCAP)</div>
+            <div class="job-meta">Social Development Division Care Economy Researcher and Data Representation | Sep 2023 - Dec 2023</div>
+          </div>
+        </div>
+        <ul>
+          <li>Contributed to Beijing+30 synthesis across five thematic areas-informing regional policy.</li>
+          <li>Supported Seventh Asian & Pacific Population Conference (54 member states); coordinated logistics and cross-cultural communications.</li>
+          <li>Facilitated Working Group on the Asian & Pacific Decade of Persons with Disabilities.</li>
+        </ul>
+
+        <div class="job-header">
+          <img src="images/gon.jpeg" alt="GON Logo" class="job-logo">
+          <div>
+            <div class="job-title">Government of Nepal (GON), Pokhara Metropolitan City Office</div>
+            <div class="job-meta">Social Development and Humanitarian Project Officer; Full Time; Onsite | Jul 2016 - May 2020</div>
+          </div>
+        </div>
+        <ul>
+          <li>Implemented and maintained a comprehensive database for 650 street children and 10,000+ elderly pension recipients.</li>
+          <li>Coordinated with 80+ civil society organizations (CSOs) to establish youth forums and ad hoc working groups.</li>
+          <li>Collaborated directly with the Municipality Mayor and 33 ward members to institutionalize the Child-Friendly Local Governance (CFLG) program.</li>
+          <li>Designed and executed innovative fundraising strategies, including a strategic partnership with UNICEF Nepal, securing USD 10,000.</li>
+        </ul>
+      </section>
+
+      <section class="resume-section">
+        <h3><i class="fas fa-book"></i> Publications</h3>
+        <ul>
+          <li>Sharma, N., Nitivattananon, V., Tsusaka, T. W., & Pandey, R. (2024). An Application of the Stakeholder Theory and Proactive-Reactive Disaster Management Principles to Study Climate Trends, Disaster Impacts, and Strategies for the Resilient Tourism Industry. <em>International Journal of Sustainable Development and Planning</em>, 19(4), 1337-1346.</li>
+          <li>Sharma, N. (2024). Identifying Hazards and Developing Resilience for Sustainable Urban Tourism: A Case Study of Pokhara, Nepal. <em>Doctoral Dissertation, Asian Institute of Technology, Thailand</em>.</li>
+          <li>Sharma, N., & Pandey, R. (2024). Examining the Environmental Sustainability of Tourism Enterprises in Lakeside, Pokhara. <em>The Geographic Base</em>, 10, 103-125.</li>
+          <li>Sharma, N. (2022). Visitors' Perception on Environmental Implications of Tourism in Lakeside Pokhara, Nepal. <em>Pokhara University</em>.</li>
+        </ul>
+      </section>
+
+      <section class="resume-section">
+        <h3><i class="fas fa-award"></i> Honors & Awards</h3>
+        <ul>
+          <li><strong>PhD Fellowship</strong>, University Grants Commission (UGC), Nepal (August 2022)</li>
+          <li><strong>Asian Institute of Technology PhD Scholarship</strong> (August 2020)</li>
+          <li><strong>Dean's List Award</strong>, Pokhara University (August 2019 & September 2016)</li>
+          <li><strong>Japan Student Services Organization (JASSO) Exchange Scholarship</strong> (Kumamoto University, Japan)</li>
+        </ul>
+      </section>
+
+      <section class="resume-section">
+        <h3><i class="fas fa-certificate"></i> Licenses & Certifications</h3>
+        <ul>
+          <li>Foundations of Geographic Information Systems (GIS) - LinkedIn Learning (August 2024)</li>
+          <li>Data Analytics: Dashboards vs. Data Stories - LinkedIn Learning (August 2024)</li>
+          <li>Machine Learning & AI Foundations: Linear Regression - LinkedIn Learning (August 2024)</li>
+          <li>GRIH Platform Training - UNCCD G20 Global Land Initiative Coordination Office (July 2024)</li>
+          <li>Closing the Green Skills Gap to Power a Greener Economy and Drive Sustainability - LinkedIn Learning (January 2024)</li>
+          <li>Climate Change: A Top ESG Concern - LinkedIn Learning (January 2024)</li>
+        </ul>
+      </section>
+
+    </main>
   </div>
 
   <footer>
