@@ -345,28 +345,7 @@
       to {opacity: 1}
     }
 
-    .astro-image {
-      flex: 1;
-      min-width: 250px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-      background-color: #ffbf009c;
-      border-radius: 8px;
-      font-size: 15px;
-    }
-
-    .astro-img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      object-fit: cover;
-      margin-top: 15px;
-    }
-
-    .contact-us-box {
+.contact-us-box {
       flex: 1;
       min-width: 250px;
       display: flex;
@@ -385,6 +364,57 @@
       border-radius: 8px;
       object-fit: cover;
       margin-top: 15px;
+    }
+    .latest-news-box {
+      flex: 1;
+      min-width: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      /* Light golden green background */
+      background-color: #d4df9e; 
+      border-radius: 8px;
+      font-size: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .latest-news-box h2 {
+      margin-top: 0;
+      color: #054b03;
+      font-size: 22px;
+      text-align: center;
+      width: 100%;
+      border-bottom: 2px solid gold;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .news-links {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    .news-links li {
+      margin-bottom: 10px;
+    }
+
+    .news-links a {
+      text-decoration: none;
+      color: #054b03;
+      font-weight: 600;
+      display: block;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .news-links a:hover {
+      background-color: rgba(255, 215, 0, 0.4); /* Gold highlight on hover */
+      transform: translateX(5px);
     }
 
     /* Service Sections */
@@ -701,26 +731,10 @@
         font-size: 16px;
       }
 
-      .astro-image {
+      .latest-news-box {
         min-width: auto;
         padding: 15px;
         font-size: 14px;
-      }
-
-      .astro-img {
-        max-width: 150px;
-        margin-top: 10px;
-      }
-
-      .contact-us-box {
-        min-width: auto;
-        padding: 15px;
-        font-size: 14px;
-      }
-
-      .contact-img {
-        max-width: 150px;
-        margin-top: 10px;
       }
 
       .research-support, .data-support {
@@ -787,11 +801,7 @@
         padding: 10px;
       }
 
-      .astro-image {
-        padding: 10px;
-      }
-
-      .contact-us-box {
+      .latest-news-box {
         padding: 10px;
       }
     }
@@ -884,11 +894,15 @@
       <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
       <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
     </div>
-    <div class="contact-us-box">
-          <a href="contactinformation.html">
-            <img src="images/contactus Large.jpeg" alt="Contact Us" class="contact-img">
-          </a>
-        </div>
+    <div class="latest-news-box">
+      <h2>Latest</h2>
+      <ul class="news-links">
+        <li><a href="aboutus.html">Learning opportunities</a></li>
+        <li><a href="partnership.html">Recent Partnership Programs</a></li>
+        <li><a href="publication.html">Recent Publication</a></li>
+        <li><a href="team.html">Team updates</a></li>
+      </ul>
+    </div>
   </div>
 
   <footer>
