@@ -366,6 +366,27 @@
       margin-top: 15px;
     }
 
+    .contact-us-box {
+      flex: 1;
+      min-width: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background-color: #ffbf009c;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    .contact-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-top: 15px;
+    }
+
     /* Service Sections */
     .research-support, .data-support {
       display: flex;
@@ -691,6 +712,17 @@
         margin-top: 10px;
       }
 
+      .contact-us-box {
+        min-width: auto;
+        padding: 15px;
+        font-size: 14px;
+      }
+
+      .contact-img {
+        max-width: 150px;
+        margin-top: 10px;
+      }
+
       .research-support, .data-support {
         flex-direction: column;
         margin: 15px 10px;
@@ -756,6 +788,10 @@
       }
 
       .astro-image {
+        padding: 10px;
+      }
+
+      .contact-us-box {
         padding: 10px;
       }
     }
@@ -848,16 +884,11 @@
       <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
       <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
     </div>
-
-    <div class="astro-image">
-      <div class="content-area">
-        <h1>Test our Services</h1>    
-        <a href="https://form.jotform.com/251214251755451" 
-           target="_blank" 
-           class="registration-button">Book For Service</a>
-      </div>
-      <img src="images/contactus Large.jpeg" alt="Astrology" class="astro-img">
-    </div>
+    <div class="contact-us-box">
+          <a href="contactinformation.html">
+            <img src="images/contactus Large.jpeg" alt="Contact Us" class="contact-img">
+          </a>
+        </div>
   </div>
 
   <footer>
