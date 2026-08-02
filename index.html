@@ -404,21 +404,20 @@
    .latest-img-link {
       display: block;
       width: 100%;
-      margin-top: 20px; /* Adds breathing room below 'Team updates' */
+      margin-top: 20px;
     }
 
     .latest-img {
-      width: 100%; /* Forces the image to shrink to the box's width */
+      width: 100%; /* This is the magic rule that forces it to stay small */
       max-width: 100%;
       height: auto;
-      border-radius: 5px; /* Matches the rounded corners of your links */
-      object-fit: cover;
+      border-radius: 5px;
       display: block;
       transition: transform 0.3s ease;
     }
 
     .latest-img-link:hover .latest-img {
-      transform: scale(1.02); /* Slight zoom when hovered */
+      transform: scale(1.02);
     }
 
     .news-links {
@@ -920,10 +919,12 @@
     </div>
   </nav>
 
-  <div class="slideshow-wrapper">
+<div class="slideshow-wrapper">
+    
+    <!-- Left Side: Slideshow -->
     <div class="slideshow-container">
-      <!-- New Slideshow Title -->
       <h2 class="slideshow-title">Our Strategic Climate Solutions</h2>
+      
       <div class="slide fade">
         <img src="images/climateadaptation Large.jpeg" alt="Slideshow Image 1" class="slideshow-img">
       </div>
@@ -939,6 +940,8 @@
       <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
       <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
     </div>
+
+    <!-- Right Side: Latest News Box -->
     <div class="latest-news-box">
       <h2>Latest</h2>
       <ul class="news-links">
@@ -947,11 +950,13 @@
         <li><a href="publication.html">Recent Publication</a></li>
         <li><a href="team.html">Team updates</a></li>
       </ul>
-    </div>
-    <!-- Newly added Contact Us image -->
+      
+      <!-- Contact Image firmly inside the box -->
       <a href="contactinformation.html" class="latest-img-link">
-          <img src="images/contactus Large.jpeg" alt="Collaborate with our experts" class="latest-img">
+        <img src="images/contactus Large.jpeg" alt="Collaborate with our experts" class="latest-img">
       </a>
+    </div>
+    
   </div>
 
   <footer>
