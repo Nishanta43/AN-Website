@@ -401,6 +401,25 @@
       margin-bottom: 15px;
     }
 
+    .latest-img-link {
+      display: block;
+      width: 100%;
+      margin-top: 15px; /* Adds space between the links and the image */
+    }
+
+    .latest-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .latest-img-link:hover .latest-img {
+      transform: scale(1.03); /* Gives the image a slight zoom effect when clicked */
+    }
+
     .news-links {
       list-style-type: none;
       padding: 0;
@@ -928,6 +947,10 @@
         <li><a href="team.html">Team updates</a></li>
       </ul>
     </div>
+    <!-- Newly added Contact Us image -->
+      <a href="contactinformation.html" class="latest-img-link">
+        <img src="images/contactus Large.jpeg" alt="Contact Us" class="latest-img">
+      </a>
   </div>
 
   <footer>
