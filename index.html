@@ -401,23 +401,24 @@
       margin-bottom: 15px;
     }
 
-    .latest-img-link {
+   .latest-img-link {
       display: block;
       width: 100%;
-      margin-top: 15px; /* Adds space between the links and the image */
+      margin-top: 20px; /* Adds breathing room below 'Team updates' */
     }
 
     .latest-img {
-      width: 100%;
+      width: 100%; /* Forces the image to shrink to the box's width */
+      max-width: 100%;
       height: auto;
-      border-radius: 8px;
+      border-radius: 5px; /* Matches the rounded corners of your links */
       object-fit: cover;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      display: block;
       transition: transform 0.3s ease;
     }
 
     .latest-img-link:hover .latest-img {
-      transform: scale(1.03); /* Gives the image a slight zoom effect when clicked */
+      transform: scale(1.02); /* Slight zoom when hovered */
     }
 
     .news-links {
@@ -949,7 +950,7 @@
     </div>
     <!-- Newly added Contact Us image -->
       <a href="contactinformation.html" class="latest-img-link">
-        <img src="images/contactus Large.jpeg" alt="Contact Us" class="latest-img">
+          <img src="images/contactus Large.jpeg" alt="Collaborate with our experts" class="latest-img">
       </a>
   </div>
 
