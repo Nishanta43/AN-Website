@@ -1,4 +1,0 @@
-﻿Process ID,Process name,Category,Location,Reference product,Reference product unit,Reference product amount
-P001,Paracetamol API production,Pharmaceutical/API,GLO,Paracetamol API,kg,0.5
-P002,Tablet production,Pharmaceutical/Formulation,GLO,Paracetamol tablets,kg,1
-P003,Packaging process,Pharmaceutical/Packaging,GLO,Packaged tablets,pieces,1000
